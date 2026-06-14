@@ -42,6 +42,7 @@ class ProductDetailAPIView(APIView):
         except Product.DoesNotExist:
             return None
 
+
     def get(self, request, pk):
         """
         Show details of a specific product
@@ -51,6 +52,7 @@ class ProductDetailAPIView(APIView):
             return Response({'detail': 'Product not found.'}, status=status.HTTP_404_NOT_FOUND)
         serializer = ProductSerializer(product)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
 
     @swagger_auto_schema(request_body=ProductSerializer, responses={200: ProductSerializer()})
     def patch(self, request, pk):
@@ -65,6 +67,7 @@ class ProductDetailAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
     @swagger_auto_schema(request_body=ProductSerializer,responses={200: ProductSerializer()})
     def put(self, request, pk):
