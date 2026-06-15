@@ -18,7 +18,7 @@ class ProductListCreateApiView(APIView):
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @swagger_auto_schema(request_body=ProductSerializer, responses={201: ProductSerializer()})
+    @swagger_auto_schema(request_body=ProductSerializer, responses={201: ProductSerializer})
     def post(self, request):
         """
         Create a new product

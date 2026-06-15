@@ -29,6 +29,11 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = ["*"]  # During production, the actual domain address is inserted
 
+# ALLOWED_HOSTS = [
+#     "YOUR_SERVER_IP",
+#     "mehreganpakhsh.com",
+#     "www.mehreganpakhsh.com",
+# ]
 
 # Application definition
 

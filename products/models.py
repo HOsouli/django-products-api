@@ -12,7 +12,7 @@ class Product(models.Model):
     brand = models.CharField(max_length=255, verbose_name='برند')
     price = models.DecimalField(max_digits=12, decimal_places=0, verbose_name='قیمت')
     image = models.ImageField(upload_to='products/', verbose_name='تصویر کالا')
-    image_thumbnail = ImageSpecField(source="image", processors=[ResizeToFill(600, 400)], format="JPEG", options={"quality": 85})
+    image_thumbnail = ImageSpecField(source="image", processors=[ResizeToFill(800, 800)], format="JPEG", options={"quality": 85})
     stock = models.BooleanField(default=True, verbose_name='موجود')
     is_active = models.BooleanField(default=True, verbose_name='فعال/غیرفعال')
     published_date = models.DateTimeField(default=timezone.now,verbose_name='تاریخ انتشار')

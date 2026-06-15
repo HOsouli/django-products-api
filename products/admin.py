@@ -16,3 +16,5 @@ class Product_admin(admin.ModelAdmin):
     )
     list_filter = ("category", "brand", "stock")
     search_fields = ("name", "brand", "category")
+
+
